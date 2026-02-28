@@ -28,12 +28,14 @@ public class KhqrService {
     @Value("${bakong.api.token}")
     private String token;
 
-    // Email used to renew token when generating deeplink (optional)
     @Value("${bakong.api.email}")
     private String bakongEmail;
 
-    private final String FTB_BAKONG_ACCOUNT_ID = "aclbkhppxxx@aclb";
-    private final String ACQUIRING_BANK = "Acleda Bank Plc.";
+    @Value("${bakong-account.id}")
+    private String FTB_BAKONG_ACCOUNT_ID;
+
+    @Value("${bakong.acquiring-bank}")
+    private String ACQUIRING_BANK;
 
     public KhqrService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
